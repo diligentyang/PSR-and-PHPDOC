@@ -76,3 +76,35 @@ if (! function_exists('bar')) {
 
 
 ```
+
+# 3.命名空间和类
+
+命名空间`Namespace`和类`class`必须 遵循"`autoloading`" PSR标准: [[PSR-0](http://www.php-fig.org/psr/psr-0/), [PSR-4](http://www.php-fig.org/psr/psr-4/)].
+
+这就意味着每一个类**必须**独立为一个属于他自己的文件，且命名空间至少有一个层次：顶级的组织名称（vendor name）。
+
+类的命名**必须**遵循以大写开头的驼峰命名规则（`StudlyCaps`）。
+
+PHP5.3及以后的必须用正式的命名空间。
+
+例如：
+
+```php
+<?php
+// PHP 5.3 and later:
+namespace Vendor\Model;
+
+class Foo
+{
+}
+```
+
+5.2.x及之前的版本**应该**使用以`Vendor_`为类名前缀的 伪命名空间的写法
+
+```php
+<?php
+// PHP 5.2.x and earlier:
+class Vendor_Model_Foo
+{
+}
+```
