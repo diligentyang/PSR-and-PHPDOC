@@ -108,3 +108,36 @@ class Vendor_Model_Foo
 {
 }
 ```
+
+# 4.类的常量、属性和方法
+
+此处的“类”指代所有的类、接口以及可复用代码块（traits）
+
+译者注：trait 在 PHP 5.4 中泛指所有能被重复使用的函式。 http://php.net/manual/en/language.oop5.traits.php
+
+## 4.1常量
+
+类的常量**必须**所有字母全部大写，用下划线分隔。
+
+例如：
+
+```php
+<?php
+namespace Vendor\Model;
+
+class Foo
+{
+    const VERSION = '1.0';
+    const DATE_APPROVED = '2012-06-01';
+}
+
+```
+
+## 4.2属性
+
+类的属性命名可以遵循 大写开头的驼峰式 (`$StudlyCaps`)、小写开头的驼峰式 (`$camelCase`) 又或者是 下划线分隔式 (`$under_score`)，本规范不做强制要求，但无论遵循哪种命名方式，都应该在一定的范围内保持一致。这个范围可以是整个团队、整个包、整个类或整个方法。
+
+## 4.3
+
+方法名必须符合以小写开头的驼峰命名法（`camelCase()`）。
+
