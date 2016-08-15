@@ -113,7 +113,7 @@ class Vendor_Model_Foo
 
 此处的“类”指代所有的类、接口以及可复用代码块（traits）
 
-译者注：trait 在 PHP 5.4 中泛指所有能被重复使用的函式。 http://php.net/manual/en/language.oop5.traits.php
+译者注：trait在PHP5.4中泛指所有能被重复使用的函式。 http://php.net/manual/en/language.oop5.traits.php
 
 ## 4.1常量
 
@@ -140,4 +140,5 @@ class Foo
 ## 4.3
 
 方法名必须符合以小写开头的驼峰命名法（`camelCase()`）。
+
 
