@@ -24,3 +24,39 @@
 - 控制结构的开始花括号(`{`)**必须**写在声明的同一行，而结束花括号(`}`)**必须**写在主体后自成一行。
 - 控制结构的开始左括号（`{`）之后**一定不能**有空格，右括号(`}`)之前**一定不能**有空格。
 
+
+## 1.1例子
+
+以下这个例子简单的展示了以上的大部分规范。
+
+```php
+<?php
+namespace Vendor\Package;
+
+use FooInterface;
+use BarClass as Bar;
+use OtherVendor\OtherPackage\BazClass;
+
+class Foo extends Bar implements FooInterface
+{
+    public function sampleFunction($a, $b = null)
+    {
+        if ($a === $b) {
+            bar();
+        } elseif ($a > $b) {
+            $foo->bar($arg1);
+        } else {
+            BazClass::bar($arg2, $arg3);
+        }
+    }
+
+    final public static function bar()
+    {
+        // method body
+    }
+}
+
+```
+
+# 2.通则
+
