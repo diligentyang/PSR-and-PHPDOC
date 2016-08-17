@@ -58,7 +58,7 @@ class Foo extends Bar implements FooInterface
 
 ```
 
-# 2.通则
+# 2. 通则
 
 ## 2.1 基本编码规范
 
@@ -99,5 +99,27 @@ PHP关键字**必须**全部小写。
 
 PHP常量true,false和null**必须**全部小写。
 
+# 3. 命名空间以及Use声明
 
+存在命名空间时，其后面**必须**有一个空白行。
+
+所有的use，**必须**在命名空间后声明。
+
+每条`use`声明语句，**必须**只有一个`use`关键字。
+
+`use`声明语句块后面**必须**有一个空白行。
+
+例如：
+
+```php
+<?php
+namespace Vendor\Package;
+
+use FooClass;
+use BarClass as Bar;
+use OtherVendor\OtherPackage\BazClass;
+
+// ... additional PHP code ...
+
+```
 
