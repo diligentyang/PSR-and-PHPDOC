@@ -176,7 +176,7 @@ class ClassName extends ParentClass implements
 
 每条语句**一定不能**定义超过一个属性。
 
-属性名称**不应该**以下划线作为前缀来区分属性是`protected`或`private`。
+属性名称**不应该**以单个下划线作为前缀来表示属性是`protected`或`private`。
 
 一个属性的声明应该像下面这样。
 
@@ -190,4 +190,29 @@ class ClassName
 }
 
 ```
+
+## 4.3 方法
+
+所有方法都**必须**声明可见性（访问修饰符）。
+
+方法名称**不应该**以单个下划线作为前缀来表示是`protected`或`private`。
+
+方法名称后**一定不能**有空格符，其开始花括号**必须**独占一行，结束花括号也**必须**在方法主体后单独成一行。参数左括号后和右括号前**一定不能**有空格。
+
+一个方法定义应该像下面这样，注意括号，逗号，空格和花括号的位置：
+
+```php
+<?php
+namespace Vendor\Package;
+
+class ClassName
+{
+    public function fooBarBaz($arg1, &$arg2, $arg3 = [])
+    {
+        // method body
+    }
+}
+
+```
+
 
