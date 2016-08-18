@@ -168,3 +168,26 @@ class ClassName extends ParentClass implements
 
 ```
 
+## 4.2 属性
+
+所有属性都**必须**声明可见性。
+
+**一定不能**使用关键字`var`声明一个属性。
+
+每条语句**一定不能**定义超过一个属性。
+
+属性名称**不应该**以下划线作为前缀来区分属性是`protected`或`private`。
+
+一个属性的声明应该像下面这样。
+
+```php
+<?php
+namespace Vendor\Package;
+
+class ClassName
+{
+    public $foo = null;
+}
+
+```
+
