@@ -123,3 +123,48 @@ use OtherVendor\OtherPackage\BazClass;
 
 ```
 
+# 4. 类、属性和方法
+
+此处的“类”泛指所有的class类、接口以及traits可复用代码块。
+
+## 4.1 扩展和继承
+
+关键词`extends`和`implements`**必须**和类名在同一行。
+
+类开始的花括号（`{`）**必须**独占一行，类结束的花括号（`}`）**必须**在类主体后独占一行。
+
+```php
+<?php
+namespace Vendor\Package;
+
+use FooClass;
+use BarClass as Bar;
+use OtherVendor\OtherPackage\BazClass;
+
+class ClassName extends ParentClass implements \ArrayAccess, \Countable
+{
+    // constants, properties, methods
+}
+
+```
+
+`implements`的接口列表也可以分成多行，当这样做时，列表中的第一个接口**必须**放在下一行中，每行**必须**只有一个接口
+
+```php
+<?php
+namespace Vendor\Package;
+
+use FooClass;
+use BarClass as Bar;
+use OtherVendor\OtherPackage\BazClass;
+
+class ClassName extends ParentClass implements
+    \ArrayAccess,
+    \Countable,
+    \Serializable
+{
+    // constants, properties, methods
+}
+
+```
+
