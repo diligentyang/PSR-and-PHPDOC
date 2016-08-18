@@ -335,3 +335,28 @@ if ($expr1) {
 
 **应该**使用`elseif`代替`else if`，使得所有的控制关键词看起来像一个单词。
 
+## 5.2 `switch`和`case`
+
+一个`switch`结构如下所示。注意圆括号，空格和大括号的位置。`case`语句必须相对于`switch`进行一次缩进，`break`关键字（或其他终止关键字）**必须**和`case`主体缩进同级。如果存在一个非空的`case`直穿语句，则**必须**有一个类似`// no break`的注释。
+
+```php
+<?php
+switch ($expr) {
+    case 0:
+        echo 'First case, with a break';
+        break;
+    case 1:
+        echo 'Second case, which falls through';
+        // no break
+    case 2:
+    case 3:
+    case 4:
+        echo 'Third case, return instead of break';
+        return;
+    default:
+        echo 'Default case';
+        break;
+}
+
+```
+
