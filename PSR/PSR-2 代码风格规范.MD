@@ -215,4 +215,69 @@ class ClassName
 
 ```
 
+## 4.4 方法参数
+
+在参数列表中，每个逗号之前**一定不能**有空格，每个逗号之后**必须**有一个空格。
+
+方法参数中，有默认值的，**必须**放到参数列表的末尾。
+
+```php
+<?php
+namespace Vendor\Package;
+
+class ClassName
+{
+    public function foo($arg1, &$arg2, $arg3 = [])
+    {
+        // method body
+    }
+}
+
+```
+
+参数列表**可以**被拆分成分别有一次缩进的多行，这样，列表中的第一项**必须**放在下一行，每一行**必须**只放一个参数。
+
+拆分成多行的参数列表后，结束括号以及方法开始花括号**必须**写在同一行，中间用一个空格分隔，一起自成一行。
+
+```php
+<?php
+namespace Vendor\Package;
+
+class ClassName
+{
+    public function aVeryLongMethodName(
+        ClassTypeHint $arg1,
+        &$arg2,
+        array $arg3 = []
+    ) {
+        // method body
+    }
+}
+
+```
+
+## 4.5 `abstract`,`final`和`static`
+
+当存在时，`abstract`和`final`声明**必须**放在可见性之前。
+
+当存在时，`static`声明**必须**放在可见性后。
+
+```php
+<?php
+namespace Vendor\Package;
+
+abstract class ClassName
+{
+    protected static $foo;
+
+    abstract protected function zim();
+
+    final public static function bar()
+    {
+        // method body
+    }
+}
+
+```
+
 
