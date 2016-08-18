@@ -404,3 +404,19 @@ foreach ($iterable as $key => $value) {
 }
 
 ```
+
+## 5.6 `try`,`catch`
+
+一个`try catch`语句块看起来像下面这样。注意其括号、空格以及花括号的位置。
+
+```php
+<?php
+try {
+    // try body
+} catch (FirstExceptionType $e) {
+    // catch body
+} catch (OtherExceptionType $e) {
+    // catch body
+}
+
+```
