@@ -392,3 +392,15 @@ for ($i = 0; $i < 10; $i++) {
 }
 
 ```
+
+## 5.5 `foreach`
+
+一个`foreach`语句看起来像下面这样。注意其括号、空格以及花括号的位置。
+
+```php
+<?php
+foreach ($iterable as $key => $value) {
+    // foreach body
+}
+
+```
