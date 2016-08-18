@@ -370,3 +370,13 @@ while ($expr) {
     // structure body
 }
 ```
+
+同样，一个`do while`语句如下所示。注意其括号、空格以及花括号的位置。
+
+```php
+<?php
+do {
+    // structure body;
+} while ($expr);
+
+```
