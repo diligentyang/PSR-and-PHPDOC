@@ -420,3 +420,98 @@ try {
 }
 
 ```
+
+# 6. 闭包
+
+闭包声明时，关键词`function`后以及关键词`use`的前后都**必须**有一个空格。
+
+开始的花括号`{`**必须**写在声明的同一行，结束的花括号`}`**必须**紧跟在主体的下一行。
+
+参数列表和变量列表的左括号后`(`以及右括号`)`前，**一定不能**有空格。
+
+参数列表和变量列表中，逗号前**一定不能**有空格，逗号后**必须**有空格。
+
+闭包带默认值的参数**必须**放在参数列表后面。
+
+一个闭包声明看起来像下面这个样子。注意其括号、逗号、空格以及花括号的位置。
+
+```php
+<?php
+$closureWithArgs = function ($arg1, $arg2) {
+    // body
+};
+
+$closureWithArgsAndVars = function ($arg1, $arg2) use ($var1, $var2) {
+    // body
+};
+
+```
+
+参数和变量列表可以被拆分成多个有一次缩进的后续行，这样，列表中的第一个**必须**放在下一行并且每一行**必须**只有一个参数或变量。
+
+当最终（无论是参数列表还是变量列表）被分成多行时，有括号`)`和左或括号`{`必须在他们中间隔一个空格，放在一起，自成一行。
+
+以下几个闭包的例子，包含了参数和变量列表被分成多行的多情况。
+
+```php
+<?php
+$longArgs_noVars = function (
+    $longArgument,
+    $longerArgument,
+    $muchLongerArgument
+) {
+   // body
+};
+
+$noArgs_longVars = function () use (
+    $longVar1,
+    $longerVar2,
+    $muchLongerVar3
+) {
+   // body
+};
+
+$longArgs_longVars = function (
+    $longArgument,
+    $longerArgument,
+    $muchLongerArgument
+) use (
+    $longVar1,
+    $longerVar2,
+    $muchLongerVar3
+) {
+   // body
+};
+
+$longArgs_shortVars = function (
+    $longArgument,
+    $longerArgument,
+    $muchLongerArgument
+) use ($var1) {
+   // body
+};
+
+$shortArgs_longVars = function ($arg) use (
+    $longVar1,
+    $longerVar2,
+    $muchLongerVar3
+) {
+   // body
+};
+
+```
+
+注意：如果闭包在函数或方法中当做一个参数直接调用时，以上规则仍然适用。
+
+```php
+<?php
+$foo->bar(
+    $arg1,
+    function ($arg2) use ($var1) {
+        // body
+    },
+    $arg3
+);
+
+```
+
