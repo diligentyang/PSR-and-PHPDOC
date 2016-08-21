@@ -69,5 +69,7 @@
 
 - `Psr\Log\AbstractLogger`类让你通过继承它并实现通用的`log`方法来方便的实现`LoggerInterface`接口。而其他八个方法将会把消息和上下文转发给`log`方法。
 - 同样地，使用`Psr\Log\LoggerTrait`也只需实现其中的`log`方法。不过，需要特别注意的是，在traits可复用代码块还不能实现接口前，还需要`implement LoggerInterface`。
-- `Psr\Log\NullLogger`是和接口一起提供的。
+- `Psr\Log\NullLogger`是和接口一起提供的。它在没有可用的日志记录器时，**可以**为使用日志接口的用户们提供一个后备的“黑洞”。然而，当上下文的构建非常消耗资源时，带条件检查的日志记录或许是更好的办法。
+- `Psr\Log\LoggerAwareInterface`只有一个`setLogger(LoggerInterface $logger)`方法，它可以在框架中用来随意设置一个日志记录器。
+- 
 
