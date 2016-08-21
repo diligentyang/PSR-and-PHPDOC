@@ -71,5 +71,6 @@
 - 同样地，使用`Psr\Log\LoggerTrait`也只需实现其中的`log`方法。不过，需要特别注意的是，在traits可复用代码块还不能实现接口前，还需要`implement LoggerInterface`。
 - `Psr\Log\NullLogger`是和接口一起提供的。它在没有可用的日志记录器时，**可以**为使用日志接口的用户们提供一个后备的“黑洞”。然而，当上下文的构建非常消耗资源时，带条件检查的日志记录或许是更好的办法。
 - `Psr\Log\LoggerAwareInterface`只有一个`setLogger(LoggerInterface $logger)`方法，它可以在框架中用来随意设置一个日志记录器。
-- 
+- `Psr\Log\LoggerAwareTrait`trait可复用代码块可以在任何的类里面使用，只需通过它提供的`$this->logger`，就可以轻松地实现等同的接口。
+- `Psr\Log\LogLevel` 类装载了八个记录等级常量。
 
