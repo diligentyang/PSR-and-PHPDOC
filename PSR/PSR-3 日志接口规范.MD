@@ -17,3 +17,46 @@
 
 ## 1.2 信息
 
+- 每个方法都接受一个字符串类型或者是有`__toString()`方法的对象作为记录信息参数。实现者**可以**对传入的对象有特殊的处理。如果不是这样，实现者**必须**把它转换成字符串。
+- `message`参数中**可能**包含一些可以被上下文数组所替换的占位符。
+
+其中占位符**必须**与上下文数组中的键名保持一致。
+
+占位符名字**必须**使用一对花括号来作为分隔符。在占位符和分隔符之间**一定不能**有任何空格。
+
+占位符的名称**应该**只由`A-Z`、`a-z,0-9`、下划线`_`、以及英文的句号`.`组成，其它的字符作为以后占位符规范的保留字。
+
+实现者**可以**通过对占位符采用不同的转义和转换策略，来生成最终的日志。而用户在不知道上下文的前提下，**不应该**提前转义占位符。
+
+下面提供一个占位符替换的例子，仅作为参考：
+
+```php
+ /**
+   * Interpolates context values into the message placeholders.
+   */
+  function interpolate($message, array $context = array())
+  {
+      // build a replacement array with braces around the context keys
+      $replace = array();
+      foreach ($context as $key => $val) {
+          // check that the value can be casted to string
+          if (!is_array($val) && (!is_object($val) || method_exists($val, '__toString'))) {
+              $replace['{' . $key . '}'] = $val;
+          }
+      }
+
+      // interpolate replacement values into the message and return
+      return strtr($message, $replace);
+  }
+
+  // a message with brace-delimited placeholder names
+  $message = "User {username} created";
+
+  // a context array of placeholder names => replacement values
+  $context = array('username' => 'bolivar');
+
+  // echoes "User bolivar created"
+  echo interpolate($message, $context);
+  
+```
+
