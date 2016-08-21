@@ -68,4 +68,6 @@
 ## 1.4 助手类和接口
 
 - `Psr\Log\AbstractLogger`类让你通过继承它并实现通用的`log`方法来方便的实现`LoggerInterface`接口。而其他八个方法将会把消息和上下文转发给`log`方法。
+- 同样地，使用`Psr\Log\LoggerTrait`也只需实现其中的`log`方法。不过，需要特别注意的是，在traits可复用代码块还不能实现接口前，还需要`implement LoggerInterface`。
+- `Psr\Log\NullLogger`是和接口一起提供的。
 
