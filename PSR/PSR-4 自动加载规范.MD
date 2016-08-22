@@ -31,3 +31,12 @@
 
 # 3. 例子
 
+下面的表显示了符合规范完整类名、命名空间前缀和文件基目录所对应的文件路径。
+
+完整的限定类名 | 命名空间前缀 | 文件基目录 | 文件路径
+--- | --- | --- | ---
+`\Acme\Log\Writer\File_Writer`| `Acme\Log\Writer` | `./acme-log-writer/lib/` | `./acme-log-writer/lib/File_Writer.php`
+`\Aura\Web\Response\Status` | `Aura\Web` | `/path/to/aura-web/src/` | `/path/to/aura-web/src/Response/Status.php`
+`\Symfony\Core\Request` | `Symfony\Core` | `/vendor/Symfony/Core/` | `./vendor/Symfony/Core/Request.php`
+`\Zend\Acl` | `Zend` | `/usr/includes/Zend/` | `/usr/includes/Zend/Acl.php`
+
