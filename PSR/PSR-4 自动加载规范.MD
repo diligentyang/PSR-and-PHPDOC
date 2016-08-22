@@ -40,3 +40,6 @@
 `\Symfony\Core\Request` | `Symfony\Core` | `/vendor/Symfony/Core/` | `./vendor/Symfony/Core/Request.php`
 `\Zend\Acl` | `Zend` | `/usr/includes/Zend/` | `/usr/includes/Zend/Acl.php`
 
+关于本规范的实现，可参阅[相关实例](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader-examples.md)。
+
+注意：实例并不属于规范的一部分，且随时会有所变动。
